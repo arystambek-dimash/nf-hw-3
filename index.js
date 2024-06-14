@@ -1,8 +1,10 @@
 import express from 'express';
 import {job, properties} from "./bacgroundTask.js";
+import cors from "cors";
 
 const app = express();
 
+app.use(cors());
 job.start();
 
 app.get('/apartments', (req, res) => {
